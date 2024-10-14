@@ -9,7 +9,6 @@ namespace Talabat.Core.Entitise
 {
     public class BaseEntity
     {
-    
         public int Id { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Talabat.Core.Entitise
 {
-    public class Product:BaseEntity
+    public class Product: BaseEntity
     {
         public string Name { get; set; }
 

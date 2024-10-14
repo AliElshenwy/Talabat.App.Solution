@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Talabat.Core.Entitise;
 using Talabat.Core.Repositories.Contrect;
+using Talabat.Helpers;
 using Talabat.Repository;
 
 namespace Talabat
@@ -28,7 +29,9 @@ namespace Talabat
            //builder.Services.AddScoped<IGenericRepositorty<ProductCategory>, GenericRepository<ProductCategory>>();
           
             builder.Services.AddScoped(typeof(IGenericRepositorty<>), typeof(GenericRepository<>));
+            // Register AutoMapper  Services
 
+            builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
             var app = builder.Build();
 
@@ -59,6 +62,7 @@ namespace Talabat
 
             app.UseAuthorization();
 
+            app.UseStaticFiles();
 
             app.MapControllers();
 
